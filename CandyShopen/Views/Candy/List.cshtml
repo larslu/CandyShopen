@@ -1,0 +1,16 @@
+﻿@model CandyListViewModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>@Model.CurrentCategory</h1>
+
+@foreach (var candy in Model.Candies)
+{ 
+    <div>
+        <h2>@candy.Name</h2>
+        <h3>@candy.Price.ToString("c")</h3>
+        <h4>@candy.Category.CategoryName</h4>
+    </div>
+}
+

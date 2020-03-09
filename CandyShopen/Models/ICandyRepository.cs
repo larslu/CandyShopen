@@ -7,7 +7,7 @@ namespace CandyShopen.Models
 {
     public interface ICandyRepository
     {
-        IEnumerable<Candy> GetAllCandy { get; set; }
+        IEnumerable<Candy> GetAllCandy { get; }
         IEnumerable<Candy> GetCandyOnSale { get; set; }
 
         Candy GetCandyById(int candyId);

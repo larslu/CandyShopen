@@ -9,9 +9,10 @@ namespace CandyShopen.Models
     {
         public IEnumerable<Category> GetAllCategories => new List<Category>
         {
-            new Category{CategoryId=1, CategoryName="Hard Candy", CategoryDescription="Awesome and delicious hard candy"},
-            new Category{CategoryId=2, CategoryName="Chocolate Candy", CategoryDescription="Scuptious Chocolate Candy"},
-            new Category{CategoryId=3, CategoryName="Fruit Candy", CategoryDescription="Sweet and sour Fruit Candy"}
+            new Category{CategoryId=1,CategoryName="Hard Candy",CategoryDescription = "Awesome and Delicious Hard Candy"},
+            new Category{CategoryId=2,CategoryName="Chocolate Candy",CategoryDescription="Scuptious Chocolate Candy"},
+            new Category{CategoryId=3, CategoryName="Fruit Candy",CategoryDescription="Sweet and Sour Fruit Candy"}
         };
+
     }
 }
