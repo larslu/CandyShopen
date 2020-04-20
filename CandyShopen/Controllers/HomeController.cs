@@ -6,21 +6,35 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CandyShopen.Models;
+using CandyShopen.ViewModels;
 
 namespace CandyShopen.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ICandyRepository _candyRepository;
 
+        //private readonly ILogger<HomeController> _logger;
+        /*
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
+        */
+
+        public HomeController(ICandyRepository candyRepository)
+        {
+            _candyRepository = candyRepository;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            var homeViewModel = new HomeViewModel
+            {
+                CandyOnSale = _candyRepository.GetCandyOnSale
+            };
+
+            return View(homeViewModel);
         }
 
         public IActionResult Privacy()

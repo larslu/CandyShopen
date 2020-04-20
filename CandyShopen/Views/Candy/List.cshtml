@@ -7,18 +7,6 @@
 <p>Hej!</p>
 @foreach (var candy in Model.Candies)
 { 
-    <div class="col-sm-4 col-lg-4 col-md-4 float-right" >
-        <div class="thumbnail">
-            <img src="@candy.ImageThumbnailUrl" alt="image for candy-shop" />
-            <div class="caption">
-                <h3>@candy.Price.ToString("c")</h3>
-                <h3><a asp-controller="Candy" asp-action="Details" asp-route-id="@candy.CandyId">@candy.Name</a></h3>
-                <p>@candy.Description</p>
-            </div>
-        </div>
-        
-        
-        <h4>@candy.Category.CategoryName</h4>
-    </div>
+    <partial name="_candyCard" model="candy" />
 }
 
