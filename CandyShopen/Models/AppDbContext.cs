@@ -17,6 +17,8 @@ namespace CandyShopen.Models
 
         public DbSet<Candy> Candies { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItem { get; set; }
+
 
         //Seedning av data om databasen är tom
         protected override void OnModelCreating(ModelBuilder modelBuilder)

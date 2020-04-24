@@ -30,6 +30,9 @@ namespace CandyShopen
             services.AddControllersWithViews();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICandyRepository, CandyRepository>();
+            services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
+            services.AddHttpContextAccessor();
+            services.AddSession;
 
         }
 
@@ -48,6 +51,7 @@ namespace CandyShopen
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseSession();
 
             app.UseRouting();
 
