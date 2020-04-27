@@ -32,7 +32,7 @@ namespace CandyShopen
             services.AddScoped<ICandyRepository, CandyRepository>();
             services.AddScoped<ShoppingCart>(sc => ShoppingCart.GetCart(sc));
             services.AddHttpContextAccessor();
-            services.AddSession;
+            services.AddSession();
 
         }
 

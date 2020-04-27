@@ -30,5 +30,31 @@ namespace CandyShopen.Controllers
             };
             return View(shoppingCartViewModel);
         }
+
+        public RedirectToActionResult AddToShoppingCart(int candyId)
+        {
+            var selectedCandy = _candyRepository.GetCandyById(candyId);
+            if(selectedCandy != null)
+            {
+                _shoppingCart.AddToCart(selectedCandy, 1);
+            }
+
+            return RedirectToAction("Index");
+        }
+       
+
+        public RedirectToActionResult RemoveFromShoppingCart(int candyId)
+        {
+            {
+                var selectedCandy = _candyRepository.GetCandyById(candyId);
+                
+                if (selectedCandy != null)
+                {
+                    _shoppingCart.RemoveFromCart(selectedCandy);
+                }
+                return RedirectToAction("Index");
+            }
+
+        }
     }
 }
